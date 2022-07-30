@@ -28,7 +28,7 @@ class TestBooksCollector:
         # создаем экземпляр (объект) класса BooksCollector
         collector = BooksCollector()
 
-        assert type(collector.books_rating) is dict
+        assert type(collector.get_books_rating()) is dict
 
     # проверка метода init для favorites
     def test_favorites_create_list_is_created(self):
@@ -58,7 +58,7 @@ class TestBooksCollector:
         collector.add_new_book(book_name)
         collector.add_new_book(book_name)
 
-        assert len(collector.books_rating) == 1
+        assert len(collector.get_books_rating()) == 1
 
     # можно установить рейтинг книге
     def test_set_book_rating_set_rating_2(self):
@@ -85,7 +85,7 @@ class TestBooksCollector:
         # устанавливаем рейтинг книге которой нет в словаре
         collector.set_book_rating(book_name, 1)
 
-        assert book_name not in collector.books_rating
+        assert book_name not in collector.get_books_rating()
 
     # Нельзя выставить рейтинг меньше 1
     def test_set_book_rating_when_rating_less_1_can_not_set(self):
