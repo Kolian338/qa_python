@@ -35,7 +35,7 @@ class TestBooksCollector:
         # создаем экземпляр (объект) класса BooksCollector
         collector = BooksCollector()
 
-        assert type(collector.favorites) is list
+        assert type(collector.get_list_of_favorites_books()) is list
 
     # рейтинг устанавливается = 1 по умолчанию, при добавлении книги
     def test_add_new_book_default_rating_1(self):
